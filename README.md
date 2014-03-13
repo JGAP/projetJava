@@ -26,3 +26,5 @@ Récupérer les changements
 
 	git pull
 	git fetch
+
+.
