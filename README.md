@@ -25,6 +25,4 @@ Pousser les changements
 Récupérer les changements
 
 	git pull
-	git fetch
 
-.
