@@ -65,7 +65,7 @@ public class GestionTGIVue extends GestionGeneraleVue implements ActionListener{
 		
 		else{
 			
-			if(liste.getSelectedValuesList().size()==0 || liste.getSelectedValuesList().size()>1){	//si on a sélectionné plus ou moins de 1 valeurs
+			if(liste.getSelectedValuesList().size()!=1){	//si on a sélectionné plus ou moins de 1 valeurs
 				JOptionPane jop = new JOptionPane();
 				jop.showMessageDialog(null, "Ne sélectionner un seul TGI", "Erreur", JOptionPane.ERROR_MESSAGE);
 				/**
