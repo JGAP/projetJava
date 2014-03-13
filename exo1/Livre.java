@@ -1,5 +1,5 @@
 public class Livre {
-	/*******/
+	/****Paola***/
   // Variables
   private String titre, auteur;
   private int nbPages;
