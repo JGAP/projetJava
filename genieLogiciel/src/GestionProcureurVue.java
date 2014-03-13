@@ -1,38 +1,26 @@
-package vues;
 import java.awt.BorderLayout;
 import java.awt.Color;
-import java.awt.List;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.Vector;
 
 import javax.swing.*;
 
-import métier.ListeTgi;
-import métier.Tgi;
 
 
+public class GestionProcureurVue extends GestionGeneraleVue implements ActionListener{
 
-public class GestionTGIVue extends GestionGeneraleVue implements ActionListener{
-
-	public GestionTGIVue(JFrame page){
+	public GestionProcureurVue(JFrame page){
 		super(page);
 		
-		label.setText("Gestion des TGI");
+		label.setText("Gestion des Procureurs");
 		//la JList
 		JPanel listePanel=new JPanel();
 		listePanel.setLayout(new BorderLayout());
-		JLabel tgiLabel=new JLabel("Sélection d'un TGI :");
-		tgiLabel.setForeground(Color.WHITE);
-		listePanel.add(tgiLabel,BorderLayout.NORTH);
-		tgiLabel.setHorizontalAlignment(JLabel.LEFT);
-		Vector<Tgi> listeObjet=new Vector();
-		Tgi tgi1=new Tgi("Tgi Montpellier","50 route d'Adeline","061285252");
-		Tgi tgi2=new Tgi("Tgi Nimes","250 route d'Adeline","0612852554");
-		listeObjet.add(tgi1);
-		listeObjet.add(tgi2);
-		liste=new JList<Tgi>(listeObjet);	//JList(getListeTgi())
-		//liste.setBackground(Color.gray);
+		JLabel procureurLabel=new JLabel("Sélection d'un Procureur :");
+		procureurLabel.setForeground(Color.WHITE);
+		listePanel.add(procureurLabel,BorderLayout.NORTH);
+		procureurLabel.setHorizontalAlignment(JLabel.LEFT);
+		liste=new JList();	//JList(getListeProcureur())
 		listePanel.add(liste);
 		
 		//ajout des elements dans le content pane
@@ -47,6 +35,7 @@ public class GestionTGIVue extends GestionGeneraleVue implements ActionListener{
 		supprimerBouton.addActionListener(this);
 		
 		
+		
 	}
 	public void actionPerformed(ActionEvent e) {
 		Object source=e.getSource();
@@ -56,23 +45,17 @@ public class GestionTGIVue extends GestionGeneraleVue implements ActionListener{
 		}
 		
 		else if(source==ajoutBouton){
-			new TGIAjoutVue(this);
+			new ProcureurAjoutVue(this);
 			setVisible(false);
 		}
 		
 		else if(source==modifierBouton){
-			Tgi t=new Tgi();
-			t=(Tgi) liste.getSelectedValuesList().get(0);
-			System.out.println(liste.getSelectedValuesList().get(0));
-			new TGIModifVue(this,t);
+			new ProcureurModifVue(this);
 			setVisible(false);
-			
 		}
 		
 		else if(source==consulterBouton){
-			Tgi t=new Tgi();
-			t=(Tgi) liste.getSelectedValuesList().get(0);
-			new TGIConsultVue(this,t);
+			new ProcureurConsultVue(this);
 			setVisible(false);
 		}
 		

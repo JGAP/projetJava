@@ -1,27 +1,18 @@
-package vues;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.JFrame;
 
-import métier.Tgi;
 
+public class ProcureurModifVue extends AMC_ProcureurVue implements ActionListener{
 
-public class TGIModifVue extends AMC_TGIVue implements ActionListener{
-
-	private Tgi tgi;
-	public TGIModifVue(JFrame fenetre,Tgi t) {
+	public ProcureurModifVue(JFrame fenetre) {
 		super(fenetre);
-		tgi=t;
-		setTitle("Modifier TGI");
-		this.nomText.setText(t.getNom());
-		this.adresseText.setText(t.getAdresse());
-		this.telText.setText(t.getTel());
+		setTitle("Modifier Procureur");
 		precedentBouton.addActionListener(this);
 		validerBouton.addActionListener(this);
 		
 		//faire des setText dans les JTextField
-		
 	}
 
 	@Override
