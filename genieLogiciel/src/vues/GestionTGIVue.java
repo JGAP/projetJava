@@ -62,9 +62,9 @@ public class GestionTGIVue extends GestionGeneraleVue implements ActionListener{
 			new TGIAjoutVue(this);
 			setVisible(false);
 		}
-		
+
 		else{
-			
+
 			if(liste.getSelectedValuesList().size()!=1){	//si on a sélectionné plus ou moins de 1 valeurs
 				JOptionPane jop = new JOptionPane();
 				jop.showMessageDialog(null, "Ne sélectionner un seul TGI", "Erreur", JOptionPane.ERROR_MESSAGE);
@@ -73,30 +73,32 @@ public class GestionTGIVue extends GestionGeneraleVue implements ActionListener{
 				 */
 			}
 
-			else if(source==modifierBouton){
-				Tgi t=new Tgi();
-				t=(Tgi) liste.getSelectedValuesList().get(0);
-				//System.out.println(liste.getSelectedValuesList().get(0));
-				new TGIModifVue(this,t);
-				setVisible(false);
+			else{
+				 if(source==modifierBouton){
+					Tgi t=new Tgi();
+					t=(Tgi) liste.getSelectedValuesList().get(0);
+					//System.out.println(liste.getSelectedValuesList().get(0));
+					new TGIModifVue(this,t);
+					setVisible(false);
 
-			}
-
-			else if(source==consulterBouton){
-				Tgi t=new Tgi();
-				t=(Tgi) liste.getSelectedValuesList().get(0);
-				new TGIConsultVue(this,t);
-				setVisible(false);
-			}
-
-			else if(source==supprimerBouton){
-				JOptionPane jop = new JOptionPane();            
-				int option = jop.showConfirmDialog(null, "Voulez-vous supprimer le TGI ?", "Suppression du TGI", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);          
-				if(option == JOptionPane.OK_OPTION){
-					//Suppression
 				}
-				else{
 
+				else if(source==consulterBouton){
+					Tgi t=new Tgi();
+					t=(Tgi) liste.getSelectedValuesList().get(0);
+					new TGIConsultVue(this,t);
+					setVisible(false);
+				}
+
+				else if(source==supprimerBouton){
+					JOptionPane jop = new JOptionPane();            
+					int option = jop.showConfirmDialog(null, "Voulez-vous supprimer le TGI ?", "Suppression du TGI", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);          
+					if(option == JOptionPane.OK_OPTION){
+						//Suppression
+					}
+					else{
+
+					}
 				}
 			}
 		}
