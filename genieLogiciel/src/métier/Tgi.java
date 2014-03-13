@@ -24,7 +24,7 @@ public class Tgi extends Modele {
 	
 	@Override
 	public String toString() {
-		return "nom=" + nom;
+		return "Nom du TGI : " + nom;
 	}
 
 	public void load(){

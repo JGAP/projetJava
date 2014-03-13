@@ -18,17 +18,17 @@ public class TGIModifVue extends AMC_TGIVue implements ActionListener{
 		this.adresseText.setText(t.getAdresse());
 		this.telText.setText(t.getTel());
 		precedentBouton.addActionListener(this);
-		validerBouton.addActionListener(this);
-		
-		//faire des setText dans les JTextField
-		
+		validerBouton.addActionListener(this);		
 	}
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		Object source=e.getSource();
 		if(source==validerBouton){
-			//Modif
+			//Modifications
+			tgi.setNom(nomText.getText());
+			tgi.setAdresse(adresseText.getText());
+			tgi.setTel(telText.getText());
 			pagePrecedente.setVisible(true);
 			dispose();
 		}

@@ -4,16 +4,23 @@ import java.awt.event.ActionListener;
 
 import javax.swing.JFrame;
 
+import métier.Procureur;
+
 
 public class ProcureurModifVue extends AMC_ProcureurVue implements ActionListener{
 
-	public ProcureurModifVue(JFrame fenetre) {
+	Procureur procureur;
+	public ProcureurModifVue(JFrame fenetre,Procureur p) {
 		super(fenetre);
+		procureur=p;
 		setTitle("Modifier Procureur");
 		precedentBouton.addActionListener(this);
 		validerBouton.addActionListener(this);
-		
-		//faire des setText dans les JTextField
+		this.nomText.setText(p.getNom());
+		this.prenomText.setText(p.getPrenom());
+		//titre=JComboBox??
+		//this.titreText.setText(p.getTitre());
+		//sélectionner la case sélectionnée du JComboBox tgi
 	}
 
 	@Override
@@ -21,6 +28,10 @@ public class ProcureurModifVue extends AMC_ProcureurVue implements ActionListene
 		Object source=e.getSource();
 		if(source==validerBouton){
 			//Modif
+			procureur.setNom(nomText.getText());
+			procureur.setPrenom(prenomText.getText());
+			//procureur.setTitre(titreText.getText());
+			//procureur.setTgi(tgiSelectionne);
 			pagePrecedente.setVisible(true);
 			dispose();
 		}
