@@ -14,6 +14,7 @@ public class TGIModifVue extends AMC_TGIVue implements ActionListener{
 		super(fenetre);
 		tgi=t;
 		setTitle("Modifier TGI");
+		//affichage dans les champs textes des infos
 		this.nomText.setText(t.getNom());
 		this.adresseText.setText(t.getAdresse());
 		this.telText.setText(t.getTel());
@@ -28,7 +29,10 @@ public class TGIModifVue extends AMC_TGIVue implements ActionListener{
 	public void actionPerformed(ActionEvent e) {
 		Object source=e.getSource();
 		if(source==validerBouton){
-			//Modif
+			//Modifications enregistrées
+			tgi.setNom(nomText.getText());
+			tgi.setAdresse(adresseText.getText());
+			tgi.setTel(telText.getText());
 			pagePrecedente.setVisible(true);
 			dispose();
 		}
