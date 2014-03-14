@@ -18,7 +18,7 @@ public class GestionTGIVue extends GestionGeneraleVue implements ActionListener{
 	public GestionTGIVue(JFrame page){
 		super(page);
 
-		label.setText("Gestion des TGI");
+		label.setText("Gestion des TGI adeline");
 		//la JList
 		JPanel listePanel=new JPanel();
 		listePanel.setLayout(new BorderLayout());
