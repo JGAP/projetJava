@@ -13,16 +13,16 @@ import métier.Tgi;
 
 
 
-public class GestionTGIVue extends GestionGeneraleVue implements ActionListener{
+public class GestionCourVue extends GestionGeneraleVue implements ActionListener{
 
-	public GestionTGIVue(JFrame page){
+	public GestionCourVue(JFrame page){
 		super(page);
 
-		label.setText("Gestion des TGI");
+		label.setText("Gestion des Cours");
 		//la JList
 		JPanel listePanel=new JPanel();
 		listePanel.setLayout(new BorderLayout());
-		JLabel tgiLabel=new JLabel("Sélection d'un TGI AAA :");
+		JLabel tgiLabel=new JLabel("Sélection d'une Cour :");
 		tgiLabel.setForeground(Color.WHITE);
 		listePanel.add(tgiLabel,BorderLayout.NORTH);
 		tgiLabel.setHorizontalAlignment(JLabel.LEFT);
@@ -33,7 +33,7 @@ public class GestionTGIVue extends GestionGeneraleVue implements ActionListener{
 		listeObjet.add(tgi1);
 		listeObjet.add(tgi2);
 		liste=new JList<Tgi>(listeObjet);	//JList(getListeTgi())
-		//liste.setBackground(Color.orange);
+		liste.setBackground(Color.orange);
 		listePanel.add(liste);
 
 		//ajout des elements dans le content pane
@@ -59,7 +59,7 @@ public class GestionTGIVue extends GestionGeneraleVue implements ActionListener{
 		}
 
 		else if(source==ajoutBouton){
-			new TGIAjoutVue(this);
+			//new CourAjoutVue(this);
 			setVisible(false);
 		}
 
@@ -78,7 +78,7 @@ public class GestionTGIVue extends GestionGeneraleVue implements ActionListener{
 					Tgi t=new Tgi();
 					t=(Tgi) liste.getSelectedValuesList().get(0);
 					//System.out.println(liste.getSelectedValuesList().get(0));
-					new TGIModifVue(this,t);
+					//new CourModifVue(this,t);
 					setVisible(false);
 
 				}
@@ -86,7 +86,7 @@ public class GestionTGIVue extends GestionGeneraleVue implements ActionListener{
 				else if(source==consulterBouton){
 					Tgi t=new Tgi();
 					t=(Tgi) liste.getSelectedValuesList().get(0);
-					new TGIConsultVue(this,t);
+					//new CourConsultVue(this,t);
 					setVisible(false);
 				}
 

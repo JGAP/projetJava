@@ -140,7 +140,7 @@ public class GestionInstanceVue extends JFrame implements ActionListener, MouseL
 		
 		else if(source==courAppelBouton){
 			setVisible(false);
-			//new GestionCourVue(this);
+			new GestionCourVue(this);
 		}
 		
 		else if(source==procureurBouton){
@@ -150,7 +150,7 @@ public class GestionInstanceVue extends JFrame implements ActionListener, MouseL
 		
 		else if(source==titreBouton){
 			setVisible(false);
-			//new GestionTitreVue(this);
+			new GestionTitreVue(this);
 		}
 		
 		//si on clique sur precedent on revient
