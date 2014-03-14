@@ -22,7 +22,7 @@ public class GestionTGIVue extends GestionGeneraleVue implements ActionListener{
 		//la JList
 		JPanel listePanel=new JPanel();
 		listePanel.setLayout(new BorderLayout());
-		JLabel tgiLabel=new JLabel("Sélection d'un TGI AAA :");
+		JLabel tgiLabel=new JLabel("Sélection d'un TGI AAAB :");
 		tgiLabel.setForeground(Color.WHITE);
 		listePanel.add(tgiLabel,BorderLayout.NORTH);
 		tgiLabel.setHorizontalAlignment(JLabel.LEFT);

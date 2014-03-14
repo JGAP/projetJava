@@ -65,7 +65,7 @@ public class GestionProcureurVue extends GestionGeneraleVue implements ActionLis
 			else if(source==modifierBouton){
 				Procureur p=new Procureur();
 				p=(Procureur) liste.getSelectedValuesList().get(0);
-				new ProcureurModifVue(this);
+				// new ProcureurModifVue(this);
 				setVisible(false);
 			}
 
